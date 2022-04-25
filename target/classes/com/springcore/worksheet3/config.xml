@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!--  first passenger address -->
+	<bean class="com.springcore.worksheet3.Address" name="add1">
+		<property name="streetNumber" value="5" />
+		<property name="city" value="New Delhi"/>
+		<property name="pincode" value="110018" />
+		<property name="landmark" value="Near Tilar Nagar" />
+	</bean>
+	
+	<!--  first passenger detais-->
+	<bean class="com.springcore.worksheet3.Passenger" name="passenger1">
+		<property name="name" value="Divesh Kumar" />
+		<property name="age" value="24"/>
+		<property name="phoneNumber" value="987654321" />
+		<property name="address" ref="add1"/>
+	</bean>
+
+	<!-- second passenger details -->
+	<bean class="com.springcore.worksheet3.Address" name="add2">
+		<property name="streetNumber" value="6" />
+		<property name="city" value="New Delhi"/>
+		<property name="pincode" value="110064" />
+		<property name="landmark" value="Near JanakPuri" />
+	</bean>
+	
+	<!--  passenger list beans -->
+	<bean class="com.springcore.worksheet3.Passenger" name="passenger2">
+		<property name="name" value="Anshu Kumar" />
+		<property name="age" value="25"/>
+		<property name="phoneNumber" value="123456789" />
+		<property name="address" ref="add2"/>
+	</bean>
+<!-- 	
+	<bean class="com.springcore.worksheet3.Train" name="train">
+		<property name="name" value="Shane Punjab Express" />
+		<property name="pnrNumber" value="76543210" />
+		<property name="sourceStation" value="New Delhi"/>
+		<property name="destinationStation" value="Amritsar" />
+		<property name="passengerList">
+			<list>
+				<ref bean="passenger1"/>
+				<ref bean="passenger2"/>
+			</list>
+		</property> 	
+	</bean>
+
+ -->
+	<bean class="com.springcore.worksheet3.Train" name="train" p:name="Shane Punjab Express" p:pnrNumber="76543210"
+		p:sourceStation="New Delhi" p:destinationStatus="Amritsar" p:passengerList-ref="passenger1"
+	/>
+ </beans>
