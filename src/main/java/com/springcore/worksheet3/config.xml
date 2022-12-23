@@ -70,6 +70,16 @@
 					</list>
 				</property> 	
 			</bean>
+			
+			<bean class="com.springcore.worksheet3.Train" name="train" 
+ 				p:trainName="shri shakti express" p:pnr="234">
+				<property name="passenger">
+				<list>
+					<ref bean="pass1"/>
+					<ref bean="pass2"/>
+				</list>
+				</property>	
+				</bean>
 
 		 -->
 	<bean class="com.springcore.worksheet3.Train" name="train" p:name="Shane Punjab Express" p:pnrNumber="76543210"
