@@ -40,21 +40,38 @@
 		<property name="phoneNumber" value="123456789" />
 		<property name="address" ref="add2"/>
 	</bean>
-<!-- 	
-	<bean class="com.springcore.worksheet3.Train" name="train">
-		<property name="name" value="Shane Punjab Express" />
-		<property name="pnrNumber" value="76543210" />
-		<property name="sourceStation" value="New Delhi"/>
-		<property name="destinationStation" value="Amritsar" />
-		<property name="passengerList">
-			<list>
-				<ref bean="passenger1"/>
-				<ref bean="passenger2"/>
-			</list>
-		</property> 	
-	</bean>
+	
+	 <!-- 2. p-Schema -->
+		 <!--    "change while executing it just for example"    
+		 <bean class="com.springcore.worksheet3.Address" name="add1"
+			p:streetNo="1" p:city="New Delhi" p:pincode="18" p:landmark="Near Slaty Buliding School" />
+		 <bean class="com.springcore.worksheet3.Passenger" name="pass1"
+			p:name="Divesh" p:age="24" p:phoneNumber="1233" p:address-ref="add1"/>	
 
- -->
+		 <bean class="com.springcore.worksheet3.Address" name="add2"
+			p:streetNo="2" p:city="lucknow" p:pincode="64" p:landmark="Near Lal Building School" />
+		 <bean class="com.springcore.worksheet3.Passenger" name="pass2"
+			p:name="Ansh" p:age="25" p:phoneNumber="346" p:address-ref="add2"/>	
+		 -->	
+		 <!-- ex  
+		 <bean class="com.springcore.worksheet3.Train" name="train1" 
+			p:trainName="shri shakti express" p:pnr="234" p:passenger-ref="pass1" />
+		-->
+		<!-- 	
+			<bean class="com.springcore.worksheet3.Train" name="train">
+				<property name="name" value="Shane Punjab Express" />
+				<property name="pnrNumber" value="76543210" />
+				<property name="sourceStation" value="New Delhi"/>
+				<property name="destinationStation" value="Amritsar" />
+				<property name="passengerList">
+					<list>
+						<ref bean="passenger1"/>
+						<ref bean="passenger2"/>
+					</list>
+				</property> 	
+			</bean>
+
+		 -->
 	<bean class="com.springcore.worksheet3.Train" name="train" p:name="Shane Punjab Express" p:pnrNumber="76543210"
 		p:sourceStation="New Delhi" p:destinationStatus="Amritsar" p:passengerList-ref="passenger1"
 	/>
